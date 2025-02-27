@@ -19,9 +19,9 @@ namespace legendaryitems.projectiles
             {
                 sec = 2;
             }
-            ProjectileID.Sets.YoyosMaximumRange[Projectile.type] = 320;
-            ProjectileID.Sets.YoyosLifeTimeMultiplier[Projectile.type] = sec;
-            ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 15;
+            ProjectileID.Sets.YoyosMaximumRange[Projectile.type] = 320;            // the rang in pixels 
+            ProjectileID.Sets.YoyosLifeTimeMultiplier[Projectile.type] = sec;      // the time alive
+            ProjectileID.Sets.YoyosTopSpeed[Projectile.type] = 15;                 // the speed
         }
         public override void SetDefaults()
         {
