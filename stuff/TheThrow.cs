@@ -13,7 +13,7 @@ namespace legendaryitems.stuff
         public int sec;
         public override void SetStaticDefaults()
         {
-            ItemID.Sets.Yoyo[Item.type] = true;                // tells the code it is a Yoyo and to exicute Yoyo code
+            ItemID.Sets.Yoyo[Item.type] = true;                                                       // tells the code it is a Yoyo and to exicute Yoyo code
             object value = "The Throw";
         }
         public override void SetDefaults()
@@ -33,14 +33,13 @@ namespace legendaryitems.stuff
             Item.value = Item.buyPrice(gold: 10, silver: 50);
             Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.Item1;
-            Item.shoot = ModContent.ProjectileType<Thethrowp>();         // tells it what projectile to shoot
+            Item.shoot = ModContent.ProjectileType<Thethrowp>();                                      // tells it what projectile to shoot
             Item.shootSpeed = 6f;
-            Item.noMelee = true;
+            Item.noMelee = true;                                                                      // tells the code that the item itself is not a weapon
         }
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            ++sec;           // this is sec = sec + 1
-            ModContent.ProjectileType<Thethrowp>.sec = sec();
+            ++sec;                                                                                    // this is sec = sec + 1
         }
     }
 }
