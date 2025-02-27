@@ -40,6 +40,8 @@ namespace legendaryitems.stuff
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
             ++sec;                                                                                    // this is sec = sec + 1
+            Thethrowp projectile = new Thethrowp();
+            projectile.sec = sec;
         }
     }
 }
