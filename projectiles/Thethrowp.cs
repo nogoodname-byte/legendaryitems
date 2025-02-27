@@ -12,7 +12,7 @@ namespace legendaryitems.projectiles
 {
     public class Thethrowp : ModProjectile
     {
-        public int sec = 0;
+        public static int sec = 0;
         public override void SetStaticDefaults()
         {
             if (sec < 2)
