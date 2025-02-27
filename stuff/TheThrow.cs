@@ -10,7 +10,7 @@ namespace legendaryitems.stuff
 {
     public class TheThrow : ModItem    
     {
-        int sec2 = 2;
+        public int sec;
         public override void SetStaticDefaults()
         {
             ItemID.Sets.Yoyo[Item.type] = true;
@@ -36,6 +36,10 @@ namespace legendaryitems.stuff
             Item.shoot = ModContent.ProjectileType<Thethrowp>();
             Item.shootSpeed = 6f;
             Item.noMelee = true;
+        }
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            ++sec;
         }
     }
 }
