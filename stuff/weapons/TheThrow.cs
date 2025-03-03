@@ -45,6 +45,7 @@ namespace legendaryitems.stuff.weapons
 
         public void UpdateSecP()
         {
+            System.Diagnostics.Debug.WriteLine("updating sec");
             sec = sec + 1;
             Thethrowp.sec = sec;
         }
