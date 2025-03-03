@@ -4,17 +4,18 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using legendaryitems.stuff;
 using System.Security.Cryptography.X509Certificates;
 using System;
+using legendaryitems.stuff.weapons;
 
 namespace legendaryitems.projectiles
 {
     public class Thethrowp : ModProjectile
     {
-        public static int sec = 0;
+        public static int sec;
         public override void SetStaticDefaults()
         {
+            sec = TheThrow.sec;
             if (sec < 2)
             {
                 sec = 2;
