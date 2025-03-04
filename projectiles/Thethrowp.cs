@@ -15,7 +15,6 @@ namespace legendaryitems.projectiles
         public int sec;
         public override void SetStaticDefaults()
         {
-            sec = TheThrow.sec;
             if (sec < 2)
             {
                 sec = 2;
@@ -39,7 +38,6 @@ namespace legendaryitems.projectiles
             target.AddBuff(BuffID.Frostburn2, 360); // 60 = 1s
             UpdateSecP();
         }
-
         public void UpdateSecP()
         {
             Console.WriteLine("updating sec");
