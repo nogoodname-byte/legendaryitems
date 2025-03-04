@@ -13,6 +13,7 @@ namespace legendaryitems.projectiles
     public class Thethrowp : ModProjectile
     {
         public int sec;
+        public new int secM = sec;
         public override void SetStaticDefaults()
         {
             if (sec < 2)
@@ -41,7 +42,6 @@ namespace legendaryitems.projectiles
         public void UpdateSecP()
         {
             Console.WriteLine("updating sec");
-            new int secM = sec;
             ++secM
             ProjectileID.Sets.YoyosLifeTimeMultiplier[Projectile.type] = secM;      // the time alive
         }
