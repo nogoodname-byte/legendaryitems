@@ -34,5 +34,17 @@ namespace legendaryitems.projectiles
             Projectile.hostile = false;
             Projectile.penetrate = -1;
         }
+                public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            target.AddBuff(BuffID.Frostburn2, 360); // 60 = 1s
+            UpdateSecP();
+        }
+
+        public void UpdateSecP()
+        {
+            Console.WriteLine("updating sec");
+            sec = sec + 1;
+            Thethrowp.sec = sec;
+        }
     }
 }
