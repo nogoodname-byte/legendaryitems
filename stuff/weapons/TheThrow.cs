@@ -10,7 +10,7 @@ namespace legendaryitems.stuff.weapons
 {
     public class TheThrow : ModItem    
     {
-        public static int sec;
+        public int sec;
         public override void SetStaticDefaults()
         {
             ItemID.Sets.Yoyo[Item.type] = true;                                                       // tells the code it is a Yoyo and to exicute Yoyo code
