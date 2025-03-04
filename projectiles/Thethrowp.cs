@@ -33,6 +33,11 @@ namespace legendaryitems.projectiles
             Projectile.hostile = false;
             Projectile.penetrate = -1;
         }
+        public override void OnKill()
+        {
+            sec = 0;
+        }
+        
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(BuffID.Frostburn2, 360); // 60 = 1s
@@ -41,9 +46,8 @@ namespace legendaryitems.projectiles
         public void UpdateSecP()
         {
             Console.WriteLine("updating sec");
-            new int secM = sec;
-            ++secM
-            ProjectileID.Sets.YoyosLifeTimeMultiplier[Projectile.type] = secM;      // the time alive
+            ++sec
+            ProjectileID.Sets.YoyosLifeTimeMultiplier[Projectile.type] = sec;      // the time alive
         }
     }
 }
