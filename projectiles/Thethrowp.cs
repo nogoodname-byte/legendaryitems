@@ -44,7 +44,6 @@ namespace legendaryitems.projectiles
         {
             Console.WriteLine("updating sec");
             sec = sec + 1;
-            Thethrowp.sec = sec;
         }
     }
 }
