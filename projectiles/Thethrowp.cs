@@ -33,7 +33,7 @@ namespace legendaryitems.projectiles
             Projectile.hostile = false;
             Projectile.penetrate = -1;
         }
-        public override void OnKill()
+        public override void OnKill(int timeLeft)
         {
             sec = 0;
         }
