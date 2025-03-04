@@ -41,7 +41,8 @@ namespace legendaryitems.projectiles
         public void UpdateSecP()
         {
             Console.WriteLine("updating sec");
-            new int secM = sec + 1;
+            new int secM = sec;
+            ++secM
             ProjectileID.Sets.YoyosLifeTimeMultiplier[Projectile.type] = secM;      // the time alive
         }
     }
