@@ -37,20 +37,5 @@ namespace legendaryitems.stuff.weapons
             Item.shootSpeed = 6f;
             Item.noMelee = true;                                                                      // tells the code that the item itself is not a weapon
         }
-        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
-        {
-            target.AddBuff(BuffID.Frostburn2, 360); // 60 = 1s
-            if (target.value > 0f || (target.damage > 0 && !target.friendly))
-            {
-                UpdateSecP();
-            }
-        }
-
-        public void UpdateSecP()
-        {
-            Console.WriteLine("updating sec");
-            sec = sec + 1;
-            Thethrowp.sec = sec;
-        }
     }
 }
