@@ -7,12 +7,15 @@ using Terraria.ModLoader;
 using System.Security.Cryptography.X509Certificates;
 using System;
 using legendaryitems.stuff.weapons;
+using System.Security;
 
 namespace legendaryitems.projectiles
 {
     public class Thethrowp : ModProjectile
     {
         public int sec;
+        public static float damageI = 20;
+        public static float damager = 20;
         public override void SetStaticDefaults()
         {
             if (sec < 2)
@@ -25,8 +28,8 @@ namespace legendaryitems.projectiles
         }
         public override void SetDefaults()
         {
-            Projectile.width = 32;    
-            Projectile.height = 32;
+            Projectile.width = 16;    
+            Projectile.height = 16;
             Projectile.DamageType = DamageClass.Melee;
             Projectile.aiStyle = ProjAIStyleID.Yoyo;
             Projectile.friendly = true;
@@ -35,19 +38,30 @@ namespace legendaryitems.projectiles
         }
         public override void OnKill(int timeLeft)
         {
-            sec = 0;
+            damager = damageI;
+            sec = 2;
+            ProjectileID.Sets.YoyosLifeTimeMultiplier[Projectile.type] = sec;      // the time alive
         }
-        
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            target.AddBuff(BuffID.Frostburn2, 360); // 60 = 1s
             UpdateSecP();
         }
         public void UpdateSecP()
         {
-            Console.WriteLine("updating sec");
-            ++sec
+            if(damager <= damageI*3)
+            {
+                damager = damager+damageI*0.1f;
+                Projectile.damage = (int)damager;
+                Console.WriteLine("damage+");
+            }
+            if (damager >= damageI*3)
+            {
+                damager = damageI*3;
+                Projectile.damage = (int)damager;
+            }
+            ++sec;
             ProjectileID.Sets.YoyosLifeTimeMultiplier[Projectile.type] = sec;      // the time alive
+            Projectile.damage = (int)damager;
         }
     }
 }

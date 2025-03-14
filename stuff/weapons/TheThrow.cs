@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using legendaryitems.projectiles;
 using System;
+using System.Timers;
 
 namespace legendaryitems.stuff.weapons
 {
@@ -31,7 +32,7 @@ namespace legendaryitems.stuff.weapons
             Item.knockBack = 2;
             Item.crit = 6;
             Item.value = Item.buyPrice(gold: 10, silver: 50);
-            Item.rare = ItemRarityID.Green;
+            Item.rare = ItemRarityID.Expert;
             Item.UseSound = SoundID.Item1;
             Item.shoot = ModContent.ProjectileType<Thethrowp>();                                      // tells it what projectile to shoot
             Item.shootSpeed = 6f;
