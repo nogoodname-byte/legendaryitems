@@ -12,7 +12,6 @@ namespace legendaryitems.stuff.accessories
     public class SiegeMachine : ModItem
     {
         public int summons;
-        public int star;
         public override void SetDefaults()
         {
             Item.accessory = true;
