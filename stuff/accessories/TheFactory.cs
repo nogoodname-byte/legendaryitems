@@ -9,7 +9,7 @@ using System;
 
 namespace legendaryitems.stuff.accessories
 {
-    public class SiegeMachine : ModItem
+    public class TheFactory : ModItem
     {
         public int summons;
         public override void SetDefaults()
@@ -22,20 +22,13 @@ namespace legendaryitems.stuff.accessories
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            summons = player.maxMinions;
-            player.maxTurrets += summons / 2;
-            Item.defense = summons;
-            Item.lifeRegen = summons / 2;
-            player.GetDamage(DamageClass.Summon) += 0.05f * summons;
-            player.GetAttackSpeed(DamageClass.Summon) += 0.10f * summons;
+            player.maxTurrets += player.maxMinions;
+            Item.defense = player.maxMinions;
+            Item.lifeRegen = player.maxMinions;
+            player.GetDamage(DamageClass.Summon) += 0.10f * player.maxMinions;
+            player.GetAttackSpeed(DamageClass.Summon) += 0.20f * player.maxMinions;
             player.maxMinions = 1;
-            
-        }
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            recipe.AddCustomShimmerResult(ModContent.ItemType<TheFactory>(), 1);
-            recipe.Register();
+
         }
     }
 }

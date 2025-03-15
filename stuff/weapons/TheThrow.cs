@@ -12,6 +12,7 @@ namespace legendaryitems.stuff.weapons
 {
     public class TheThrow : ModItem    
     {
+        public static int damage = 20;
         public override void SetStaticDefaults()
         {
             ItemID.Sets.Yoyo[Item.type] = true;                                                       // tells the code it is a Yoyo and to exicute Yoyo code
@@ -19,8 +20,8 @@ namespace legendaryitems.stuff.weapons
         }
         public override void SetDefaults()
         {
-            Item.width = 32;
-            Item.height = 32;
+            Item.width = 16;
+            Item.height = 16;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noUseGraphic = true;
             Item.useTime = 15;
@@ -28,7 +29,7 @@ namespace legendaryitems.stuff.weapons
             Item.autoReuse = true;
             Item.channel = true;
             Item.DamageType = DamageClass.Melee;
-            Item.damage = 20;
+            Item.damage = damage;
             Item.knockBack = 2;
             Item.crit = 6;
             Item.value = Item.buyPrice(gold: 10, silver: 50);
