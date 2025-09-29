@@ -11,7 +11,7 @@ using Terraria.ModLoader;
 
 namespace legendaryitems.common.projectiles
 {
-    internal class Sstick : ModProjectile
+    public class Sstick : ModProjectile
     {
         public const int FadeInDuration = 7;
         public const int FadeOutDuration = 4;
@@ -22,7 +22,7 @@ namespace legendaryitems.common.projectiles
             get => (int)Projectile.ai[0];
             set => Projectile.ai[0] = value;
         }
-        public override void SetStaticDefaults()
+        public override void SetDefaults()
         {
             Projectile.Size = new Vector2(18);
             Projectile.scale = 1f;
