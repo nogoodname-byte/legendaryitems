@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using System.Security.Cryptography.X509Certificates;
 using System;
-using legendaryitems.stuff.weapons;
+using legendaryitems.common.weapons;
 using System.Security;
 
 namespace legendaryitems.common.projectiles

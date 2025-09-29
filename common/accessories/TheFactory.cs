@@ -4,10 +4,9 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using legendaryitems.stuff.weapons;
 using System;
 
-namespace legendaryitems.stuff.accessories
+namespace legendaryitems.common.accessories
 {
     public class TheFactory : ModItem
     {

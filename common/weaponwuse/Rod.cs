@@ -9,7 +9,7 @@ using System;
 using System.Security;
 using legendaryitems.common.projectiles;
 
-namespace legendaryitems.stuff.weaponwuse
+namespace legendaryitems.common.weaponwuse
 {
     internal class Rod : ModItem
     {

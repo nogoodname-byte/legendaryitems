@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 using static System.Net.Mime.MediaTypeNames;
 using legendaryitems.common.projectiles;
 
-namespace legendaryitems.stuff.weapons
+namespace legendaryitems.common.weapons
 {
     internal class Stockpilingstick : ModItem
     {

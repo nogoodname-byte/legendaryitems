@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using System;
 using System.Timers;
-using legendaryitems.stuff.weapons;
+using legendaryitems.common.weapons;
 
 namespace legendaryitems.common.projectiles
 {

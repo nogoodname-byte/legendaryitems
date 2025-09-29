@@ -8,7 +8,7 @@ using System;
 using System.Timers;
 using legendaryitems.common.projectiles;
 
-namespace legendaryitems.stuff.weapons
+namespace legendaryitems.common.weapons
 {
     public class TheSpin : ModItem
     {
