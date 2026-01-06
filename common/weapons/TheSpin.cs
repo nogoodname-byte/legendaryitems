@@ -18,6 +18,11 @@ namespace legendaryitems.common.weapons
             ItemID.Sets.Yoyo[Item.type] = true;                                                       // tells the code it is a Yoyo and to exicute Yoyo code
             object value = "The Spin";
         }
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            tooltips.Add(new TooltipLine(Mod, "description",
+                "increase damage by 50% every hit up to ten time the base damage, resets once put away"));
+        }
         public override void SetDefaults()
         {
             Item.width = 16;
@@ -38,6 +43,15 @@ namespace legendaryitems.common.weapons
             Item.shoot = ModContent.ProjectileType<Thespinp>();                                      // tells it what projectile to shoot
             Item.shootSpeed = 6f;
             Item.noMelee = true;                                                                      // tells the code that the item itself is not a weapon
+        }
+        Condition DownedWoF = new("KillWallOfFlesh", () => Main.hardMode);
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<TheSpin>(), 1);
+            recipe.AddCondition(Condition.NearShimmer);
+            recipe.AddCondition(DownedWoF);
+            recipe.Register();
         }
     }
 }

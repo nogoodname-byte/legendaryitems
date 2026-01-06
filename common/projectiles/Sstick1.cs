@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using legendaryitems.common.weaponwuse;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,11 @@ using Terraria;
 using Terraria.Enums;
 using Terraria.ID;
 using Terraria.ModLoader;
+using legendaryitems.common.itemdrops;
 
 namespace legendaryitems.common.projectiles
 {
-    public class Sstick : ModProjectile
+    public class Sstick1 : ModProjectile
     {
         public const int FadeInDuration = 7;
         public const int FadeOutDuration = 4;
@@ -89,7 +91,9 @@ namespace legendaryitems.common.projectiles
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            target.AddBuff(BuffID.OnFire, 360);
+            var modPlayer = Main.player[Projectile.owner].GetModPlayer<Modtheplayer>();
+            modPlayer.AddCharge(damageDone * 0.35f);
+
         }
     }
 }
